@@ -21,7 +21,7 @@ class DashboardController extends Controller
         $items = Transaction::orderBy('id', 'DESC')->take(5)->get();
 
         $pie = [
-            'pending' => Transaction::where('transaction_status', 'PEDNING')->count(),
+            'pending' => Transaction::where('transaction_status', 'PENDING')->count(),
             'succes' => Transaction::where('transaction_status', 'SUCCES')->count(),
             'failed' => Transaction::where('transaction_status', 'FAILED')->count()
         ];
